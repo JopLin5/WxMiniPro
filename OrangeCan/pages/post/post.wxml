@@ -1,0 +1,54 @@
+<!--pages/post/post.wxml-->
+<!-- 首页轮播图 -->
+<view>
+  <swiper indicator-dots='true' autoplay='true' interval='5000'>
+    <swiper-item>
+      <image src='../../images/post/post-1@text.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='../../images/post/post-2@text.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='../../images/post/post-3@text.jpg'></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 文章列表 -->
+<view class='post-container'>
+  <view class='post-author-date'>
+    <image src='{{postImg}}'/>
+    <text>{{date}}</text>
+  </view>
+  <text class='post-title'>{{title}}</text>
+  <image class='post-image' src='{{avatar}}'></image>
+  <text class='post-content'>{{content}}</text>
+
+  <view class='post-like'>
+    <image src='../../images/icon/wx_app_collect.png'></image>
+    <text>{{readingNum}}</text>
+    <image src='../../images/icon/wx_app_view.png'></image>
+    <text>{{collectionNum}}</text>
+    <image src='../../images/icon/wx_app_message.png'></image>
+    <text>{{comment}}</text>
+  </view>
+</view>
+<!-- 文章列表 -->
+<view class='post-container'>
+  <view class='post-author-date'>
+    <image src='../../images/avatar/avatar-5.png'></image>
+    <text>Jan 28 2017</text>
+  </view>
+
+  <text class='post-title'>小时候的冰棍儿与雪糕</text>
+  <image class='post-image' src='../../images/post/post-4.jpg'></image>
+  <text class='post-content'>冰棍与雪糕，绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的冰棍儿就像现在的老冰棍。时过境移，...</text>
+
+  <view class='post-like'>
+    <image src='../../images/icon/wx_app_collect.png'></image>
+    <text>108</text>
+    <image src='../../images/icon/wx_app_view.png'></image>
+    <text>98</text>
+    <image src='../../images/icon/wx_app_message.png'></image>
+    <text>7</text>
+  </view>
+</view>
