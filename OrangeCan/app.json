@@ -3,7 +3,6 @@
     "pages/welcome/welcome",
     "pages/post/post",
     "pages/post/post-detail/post-detail",
-    "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {

@@ -40,7 +40,7 @@ class DBPost {
   }
   //本地缓存  保存/更新
   execSetStorageSync(data) {
-    wx.setStorageSync('this.storageKeyName', data)
+    wx.setStorageSync(this.storageKeyName, data)
   }
 
   //获取指定id号的文章数据
@@ -57,6 +57,64 @@ class DBPost {
       }
     }
   }
+
+
+  //收藏文章
+  collect() {
+    return this.updatePostData('collect');
+  }
+  //点赞或者取消点赞
+  up() {
+    var data = this.updatePostData('up');
+    return data;
+  }
+
+  //更新本地的点赞、评论信息、收藏、阅读量
+  updatePostData(category) {
+    var itemData = this.getPostItemById(),
+      postData = itemData.data,
+      allPostData = this.getAllPostData();
+    switch (category) {
+      case 'collect':
+        //处理收藏
+        if (!postData.collectionStatus) {
+          //如果当前状态是未收藏
+          postData.collectionNum++;
+          postData.collectionStatus = true;
+          console.log('收藏')
+        } else {
+          // 如果当前状态是收藏
+          postData.collectionNum--;
+          postData.collectionStatus = false;
+          console.log('取消收藏')
+        }
+        break;
+
+      case 'up':
+        if (!postData.upStatus) {
+          postData.upNum++;
+          postData.upStatus = true;
+        }else{
+          postData.upNum--;
+          postData.upStatus = false;
+        }
+        break;
+        
+      default:
+        break;
+    }
+    //更新缓存数据库
+    allPostData[itemData.index] = postData;
+    this.execSetStorageSync(allPostData);
+    return postData;
+  }
+
+
+
+
+
+
+
 
 
 };
