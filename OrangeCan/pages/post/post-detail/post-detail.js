@@ -1,4 +1,10 @@
-// pages/welcome/welcome.js
+// pages/post/post-detail/post-detail.js
+var dataObj = require("../../../data/data.js");
+import { DBPost } from '../../../db/DBPost.js';   
+
+//获取应用实例
+var app = getApp()
+
 Page({
 
   /**
@@ -7,34 +13,26 @@ Page({
   data: {
 
   },
-  onTapJump:function(event){
-    wx.redirectTo({      //redirectTo:关闭当前页面，页面跳转，onUnload执行
-      url: '../post/post',
-
-      success:function(){
-        console.log("jump success")
-      },
-      fail:function(){
-        console.log("jump failed")
-      },
-      complete:function(){
-        console.log("jump complete")
-      }
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var postId = options.id;
+    this.dbPost = new DBPost(postId);
+    this.postData = this.dbPost.getPostItemById().data;
+    this.setData({
+      post:this.postData
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.setNavigationBarTitle({
+      title: this.postData.title,
+    })
   },
 
   /**
@@ -47,15 +45,15 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function (event) {
-    console.log("page is hide")
+  onHide: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function (event) {
-    console.log("page is unload")
+  onUnload: function () {
+
   },
 
   /**

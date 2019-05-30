@@ -1,6 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
+    // 优化缓存初始化判断
+    var storageData = wx.getStorageSync('postList');
+    if(!storageData){
+      //如果postList缓存不存在
+      var dataObj = require("data/data.js")
+      wx.clearStorageSync();
+      wx.setStorageSync('postList', dataObj.postList)
+    }
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

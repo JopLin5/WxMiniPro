@@ -1,73 +1,84 @@
 // pages/post/post.js
-Page({
 
+//引入模块data.js
+var dataObj = require("../../data/data.js");      //只可使用相对路径../../
+// var DBPost = require("../../db/DBPost.js").DBPost;    //prototype构建数据操作类
+import { DBPost } from '../../db/DBPost.js';        //使用ES6改写缓存操作类
+
+//获取应用实例
+var app = getApp()
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    date:"Jun 28 2017",
-    title:"小时候的冰棍和雪糕",
-    postImg:"../../images/avatar/avatar-4.png",
-    avatar:"../../images/post/post-5.jpg",
-    content:"冰棍与雪糕，绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的冰棍儿就像现在的老冰棍。时过境移，...",
-    readingNum:92,
-    collectionNum:108,
-    comment:7,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function() {
+    var dbPost = new DBPost();   //实例化对象
+    this.setData({
+      postList: dbPost.getAllPostData()
+    })
   },
 
+  onTapToDetail:function(event){
+    var postId = event.currentTarget.dataset.postId;
+    console.log(postId);
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id='+postId,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
