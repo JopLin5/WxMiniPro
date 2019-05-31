@@ -22,6 +22,8 @@
 //   DBPost: DBPost
 // }
 
+//引入公共方法util
+var util = require('../util/util.js')
 
 //使用ES6改写缓存操作类
 class DBPost {
@@ -94,35 +96,55 @@ class DBPost {
         if (!postData.upStatus) {
           postData.upNum++;
           postData.upStatus = true;
-        }else{
+        } else {
           postData.upNum--;
           postData.upStatus = false;
         }
         break;
-        
+
       default:
         break;
     }
+
     //更新缓存数据库
     allPostData[itemData.index] = postData;
     this.execSetStorageSync(allPostData);
     return postData;
   }
 
+  //获取文章的评论数据
+  getCommentData() {
+    var itemData = this.getPostItemById().data;
 
-
-
+    //按时间降序顺序排列评论
+    itemData.comments.sort(this.compareWithTime);
+    var len = itemData.comments.length,
+      comment;
+			for(var i=0; i<len; i++){
+				//将comment中的时间戳转换成可阅读格式
+				comment = itemData.comments[i];
+				comment.creat_time = util.getDiffTime(comment.create_time,true);
+			}
+			return itemData.comments;
+  }
+	
+	//时间降序排列
+	compareWithTime(value1,value2){
+		var flag=parseFloat(value1.create_time)-parseFloat(value2.create_time);
+		if(flag<0){
+			return 1;
+		}else if(flag>0){
+			return -1
+		}else{
+			return 0;
+		}
+	}
 
 
 
 
 
 };
-
-
-
-
-
 
 //向外部暴露模块接口
 export {
