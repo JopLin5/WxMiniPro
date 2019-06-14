@@ -8,9 +8,8 @@ Page({
 
   },
   onTapJump:function(event){
-    wx.redirectTo({      //redirectTo:关闭当前页面，页面跳转，onUnload执行
+		wx.switchTab({      //redirectTo:关闭当前页面，页面跳转，onUnload执行
       url: '../post/post',
-
       success:function(){
         console.log("jump success")
       },

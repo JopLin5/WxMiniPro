@@ -1,9 +1,9 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 优化缓存初始化判断
     var storageData = wx.getStorageSync('postList');
-    if(!storageData){
+    if (!storageData) {
       //如果postList缓存不存在
       var dataObj = require("data/data.js")
       wx.clearStorageSync();
@@ -14,7 +14,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -44,5 +43,33 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+
+  // _getUserInfo: function() {
+  //   var userInfoStorage = wx.getStorageSync('user');
+  //   if (!userInfoStorage) {
+  //     //如果缓存中没有用户信息，那么获取用户信息
+  //     var that = this;
+  //     wx.login({
+  //       success: function() {
+  //         wx.getUserInfo({
+  //           success: function(res) {
+  //             that.globalData.userInfo = res.userInfo
+  //             //将用户的基本信息把存到缓存中
+  //             wx.setStorageSync('user', res.userInfo)
+  //           },
+  //           fail: function(res) {
+  //             console.log(res);
+  //           }
+  //         })
+  //       }
+  //     })
+  //   } else {
+  //     //如果缓存中已经存在用户基本信息，那么将信息保存到全局变量中
+  //     this.globalData.userInfo = userInfoStrorage
+  //   }
+  // }
+
+
+	
 })
