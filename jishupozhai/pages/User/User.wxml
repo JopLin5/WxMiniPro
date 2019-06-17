@@ -1,0 +1,36 @@
+<view class='header'>
+<view class="header-logo"><image src="/images/zhai.png" /></view>
+<view class='header-title'>技术坡宅</view>
+<text class='header-desc'>分享实用电脑、手机软件！分享话费，流量，优惠券活动！欢迎关注技术宅坡!</text>
+</view>
+
+<!-- <view class="block">
+  <view class="block-title">关于我</view>
+  <text class="block-desc">分享实用电脑、手机软件！分享话费，流量，优惠券活动！欢迎关注技术宅坡!</text>
+</view> -->
+<view class="block">
+  <view class="block-title">商务合作</view>
+  <text class="block-desc">欢迎广告加入，合作热线：13288519977
+  1.让你广告收入更多
+  2.诚邀各媒体广告投入使用
+  3.热门的广告投放媒体，热门运营资源
+  4.完善的推广平台，让广告不再是打扰</text>
+</view>
+<view class="block">
+  <view class="block-title">联系我</view>
+  <text class="block-desc">电话：13288519977（林经理）
+  微信：Cucoplay_u
+  Q  Q：921729237
+  地址：小程序研发中心5楼505室</text>
+  <view class='wechat-image'><image src='/images/jishupozhai.png' bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveImg'></image></view>
+  <view class='wechat-desc'>长按上方二维码，相册识别关注</view>
+  <view class='wechat-image'><image src='/images/WeChat.jpg' bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveImg'></image></view>
+  <view class='wechat-desc'>长按上方二维码，相册识别添加</view>
+</view>
+
+
+<view class='footer'>
+<button bindtap='tell'>联系我:13288519977</button>
+<button open-type="contact" class='btn-service'><image src='/images/service.png' /></button>
+
+</view>

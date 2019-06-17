@@ -1,0 +1,90 @@
+page {
+  background: #f3f3f3;
+}
+
+.header {
+  background: #fff;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: center;
+}
+.header-logo image {
+  width: 250rpx;
+  height: 250rpx;
+  padding: 80rpx 0 20rpx 0;
+}
+.header-title {
+  text-align: center;
+  color: #000;
+  font-size: 50rpx;
+}
+.header-desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  line-height: 1.3;
+  font-size: 32rpx;
+  padding: 80rpx ;
+}
+
+.block {
+  background: #fff;
+  margin-top: 15rpx;
+}
+
+.block-title {
+  position: relative;
+  font-size: 35rpx;
+  line-height: 1.5;
+  color: #2e5e86;
+  padding: 10rpx 20rpx;
+  text-indent: 40rpx;
+}
+
+.block-title::after {
+  position: absolute;
+  left: 20rpx;
+  top: 10rpx;
+  content: "";
+  width: 10rpx;
+  height: 40rpx;
+  background: #2e5e86;
+}
+
+.block-desc {
+  display: block;
+  color: #666;
+  line-height: 1.6;
+  font-size: 32rpx;
+  padding: 0 30rpx 30rpx;
+}
+
+.btn-service {
+  width: 100%;
+  height: 100rpx;
+}
+
+.btn-service image {
+  width: 100%;
+  height: 100%;
+}
+
+.wechat-image {
+  display: flex;
+  justify-content: center;
+}
+
+.wechat-image image {
+  width: 500rpx;
+  height: 500rpx;
+}
+
+.wechat-desc {
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
+  padding: 0 30rpx 30rpx;
+}

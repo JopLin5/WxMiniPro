@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/User/User",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#a4d8f6",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "技术坡宅",
+    "navigationStyle": "default",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectColor": "#ed7e24",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index-un.png",
+        "selectedIconPath": "images/index.png"
+      },
+      {
+        "pagePath": "pages/User/User",
+        "text": "我的",
+        "iconPath": "images/User-un.png",
+        "selectedIconPath": "images/User.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
