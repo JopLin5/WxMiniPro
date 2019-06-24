@@ -2,9 +2,9 @@
 <view class='container'>
   <view class='category-item personal-info'>
     <view class='user-avatar'>
-      <image src='{{user-avaterUrl}}'></image>
+      <image src='{{user-avatarUrl}}'></image>
     </view>
-    <view class='user-name'>
+    <view class='user-name'> 
       <view class='user-nickname'>
         <text>{{userInfo.nickName}}</text>
       </view>

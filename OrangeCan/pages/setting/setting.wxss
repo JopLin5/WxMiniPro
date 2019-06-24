@@ -22,14 +22,14 @@
 	padding: 20rpx 0;
 }
 
-.category-itemm.personal-info .user-avater{
+.category-itemm.personal-info .user-avatar{
 	margin: 0 30rpx;
 	width: 130rpx;
 	height: 130rpx;
 	position: relative;
 }
 
-.category-item.personal-info .user-avater image{
+.category-item.personal-info .user-avatar image{
 	vertical-align: top;
 	width: 100%;
 	height: 100%;

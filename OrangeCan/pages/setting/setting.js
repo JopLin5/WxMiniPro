@@ -96,7 +96,7 @@ Page({
    */
   onLoad: function(options) {
 		this.setData({
-			userInfo:app.globalData.userInfo
+			userInfo:app.globalData.g_userInfo
 		})
   },
 
